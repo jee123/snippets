@@ -1,0 +1,25 @@
+#multiple concatenations of input file
+for i in {1..10};do cat i.txt i.txt >> i2.txt; done
+
+#reading from json and dumping to json
+
+import json
+#usd.json -> {'a':23.56, 'b':13.9}
+with open('/Users/tjee/usd.json') as f:
+    d = json.load(f)
+
+print('data a -> ', d['a'])
+print('data b -> ', d['b'])
+print('hey there!!')
+
+menu = []
+def make(val):
+    return {'name': val}
+
+menu.append(make('tt'))
+menu.append(make('pp'))
+menu.append(make('zz'))
+menu.append(make('ss'))
+
+with open('/Users/tjee/m.json', 'w') as f:
+    d = json.dump(menu, f)
